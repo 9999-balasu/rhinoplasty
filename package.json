@@ -1,0 +1,45 @@
+{
+  "name": "ai-rhinoplasty",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@huggingface/inference": "^3.6.1",
+    "@react-three/fiber": "^9.1.0",
+    "@tensorflow-models/facemesh": "^0.0.5",
+    "@tensorflow/tfjs": "^4.22.0",
+    "aws-sdk": "^2.1692.0",
+    "fabric": "^6.6.1",
+    "form-data": "^4.0.2",
+    "framer-motion": "^12.5.0",
+    "jimp": "^1.6.0",
+    "lucide-react": "^0.483.0",
+    "mongoose": "^8.12.1",
+    "multer": "^1.4.5-lts.2",
+    "next": "15.2.3",
+    "opencv.js": "^1.2.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sharp": "^0.33.5",
+    "three": "^0.174.0",
+    "whatwg-url": "^14.2.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/fabric": "^5.3.10",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/uuid": "^10.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
