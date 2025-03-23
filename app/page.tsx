@@ -63,27 +63,40 @@ export default function Home() {
     setIntensity(Number(event.target.value));
   };
 
+
   const applyAIWithIntensity = async () => {
-    if (!imageBase64) return alert("Upload an image first!");
-
+    if (!imageBase64) {
+      alert("Upload an image first!");
+      return;
+    }
+  
     setLoading(true);
-
-    const response = await fetch("/api/process-image", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ image: imageBase64, intensity }),
-    });
-
-    const data = await response.json();
-    setLoading(false);
-
-    if (data.url) {
-      setProcessedImage(data.url);
-      setViewMode("side-by-side");
-    } else {
+  
+    try {
+      const response = await fetch("/api/process-image", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ image: imageBase64 }),
+      });
+  
+      const data = await response.json();
+      setLoading(false);
+  
+      if (data.url) {
+        setProcessedImage(data.url);
+        setViewMode("side-by-side");
+      } else {
+        alert(`Error: ${data.error || "Processing failed."}`);
+      }
+    } catch (error) {
+      setLoading(false);
       alert("Error processing image.");
+      console.error("Processing error:", error);
     }
   };
+  
+
+
 
   const resetImage = () => {
     setImageBase64(null);
